@@ -1,0 +1,15 @@
+symfony v2.0.15
+twig v1.8.2
+monolog 1.0.2
+doctrine-common 2.1.4
+doctrine-dbal 2cac730bf48b384e3fdb4daf7d7847e3e42c5684
+doctrine 
+swiftmailer 
+assetic 
+twig-extensions 
+metadata 
+SensioFrameworkExtraBundle 
+JMSSecurityExtraBundle 
+SensioDistributionBundle 
+SensioGeneratorBundle 
+AsseticBundle 
