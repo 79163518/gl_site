@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="GlSite" table="gl_site" repository-class="Acme\DemoBundle\SiteRepository">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="45"/>
+    <field name="short" type="string" column="short" length="45"/>
+    <field name="url" type="string" column="url" length="45"/>
+    <field name="loginPattern" type="string" column="login_pattern" length="1000"/>
+    <field name="authPattern" type="string" column="auth_pattern" length="45"/>
+    <field name="crawlerLogin" type="boolean" column="crawler_login"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

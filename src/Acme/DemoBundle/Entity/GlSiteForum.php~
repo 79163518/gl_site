@@ -1,0 +1,63 @@
+<?php
+
+namespace Acme\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\DemoBundle\Entity\GlSiteForum
+ *
+ * @ORM\Table(name="gl_site_forum")
+ * @ORM\Entity
+ */
+class GlSiteForum
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $forumName
+     *
+     * @ORM\Column(name="forum_name", type="string", length=45, nullable=true)
+     */
+    private $forumName;
+
+    /**
+     * @var string $threadPattern
+     *
+     * @ORM\Column(name="thread_pattern", type="string", length=1000, nullable=true)
+     */
+    private $threadPattern;
+
+    /**
+     * @var string $url
+     *
+     * @ORM\Column(name="url", type="string", length=45, nullable=true)
+     */
+    private $url;
+
+    /**
+     * @var integer $deep
+     *
+     * @ORM\Column(name="deep", type="integer", nullable=true)
+     */
+    private $deep;
+
+    /**
+     * @var GlSite
+     *
+     * @ORM\ManyToOne(targetEntity="GlSite")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="site_id", referencedColumnName="id")
+     * })
+     */
+    private $site;
+
+
+}

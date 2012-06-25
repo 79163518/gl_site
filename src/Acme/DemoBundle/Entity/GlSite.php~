@@ -1,0 +1,67 @@
+<?php
+
+namespace Acme\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\DemoBundle\Entity\GlSite
+ *
+ * @ORM\Table(name="gl_site")
+ * @ORM\Entity(repositoryClass="Acme\DemoBundle\Repository\SiteRepository")
+ */
+class GlSite
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(name="name", type="string", length=45, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string $short
+     *
+     * @ORM\Column(name="short", type="string", length=45, nullable=true)
+     */
+    private $short;
+
+    /**
+     * @var string $url
+     *
+     * @ORM\Column(name="url", type="string", length=45, nullable=true)
+     */
+    private $url;
+
+    /**
+     * @var string $loginPattern
+     *
+     * @ORM\Column(name="login_pattern", type="string", length=1000, nullable=true)
+     */
+    private $loginPattern;
+
+    /**
+     * @var string $authPattern
+     *
+     * @ORM\Column(name="auth_pattern", type="string", length=45, nullable=true)
+     */
+    private $authPattern;
+
+    /**
+     * @var boolean $crawlerLogin
+     *
+     * @ORM\Column(name="crawler_login", type="boolean", nullable=true)
+     */
+    private $crawlerLogin;
+
+
+}

@@ -1,0 +1,62 @@
+<?php
+
+namespace Acme\DemoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\DemoBundle\Entity\GlSiteThreadReply
+ *
+ * @ORM\Table(name="gl_site_thread_reply")
+ * @ORM\Entity
+ */
+class GlSiteThreadReply
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $identity
+     *
+     * @ORM\Column(name="identity", type="string", length=45, nullable=true)
+     */
+    private $identity;
+
+    /**
+     * @var GlSiteThread
+     *
+     * @ORM\ManyToOne(targetEntity="GlSiteThread")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="thread_id", referencedColumnName="id")
+     * })
+     */
+    private $thread;
+
+    /**
+     * @var GlSiteAccount
+     *
+     * @ORM\ManyToOne(targetEntity="GlSiteAccount")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     * })
+     */
+    private $account;
+
+    /**
+     * @var GlReplayPool
+     *
+     * @ORM\ManyToOne(targetEntity="GlReplayPool")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="reply_content", referencedColumnName="id")
+     * })
+     */
+    private $replyContent;
+
+
+}
