@@ -31,8 +31,8 @@ class CrawlerCommand extends ContainerAwareCommand
 
         $crawlerServiceId = $forum.'_crawler';
 
-        //$siteService = 'Acme\\DemoBundle\\Site\\'.$siteShort.'Site';
-        //$forumService =  'Acme\\DemoBundle\\Forum\\'.$siteShort.$forumShort.'Forum';
+        $siteService = 'Acme\\DemoBundle\\Site\\'.$siteShort.'Site';
+        $forumService =  'Acme\\DemoBundle\\Forum\\'.$siteShort.$forumShort.'Forum';
 
         //$this->getContainer()->register($siteServiceId, $siteService)
             //->addArgument(new Reference("doctrine.orm.entity_manager"));
